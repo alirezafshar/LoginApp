@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const cors = require("cors");
 const login = require("./routers/login");
 const signup = require("./routers/signup");
@@ -15,7 +16,7 @@ app.use("/login", login);
 app.use("/signup", signup);
 
 if (process.env.NODE_ENV === "production") {
-    app.get('/*', (req, res) => {
+    app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, "client/build/index.html"), (err) => {
             if (err) {
                 res.status(500).send(err)
