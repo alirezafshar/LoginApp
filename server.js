@@ -16,6 +16,7 @@ app.use("/login", login);
 app.use("/signup", signup);
 
 if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
     app.get('/*', (req, res) => {
         res.sendFile(path.join(__dirname, "client/build/index.html"), (err) => {
             if (err) {
