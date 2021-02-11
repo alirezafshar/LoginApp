@@ -86,10 +86,16 @@ class Signup extends Component {
             })
         } else {
             const file = e.target.files[0];
-            const format = e.target.files[0].type
+            const format = e.target.files[0].type;
+            const size = e.target.files[0].size;
+
             const trusted = validation("iamge", format)
 
-            if (!trusted) {
+            if (size > 150000) {
+                this.setState({
+                    err: { ...this.state.err, emptyErr: "", imgErr: "Image profile should be less than 150KB" }
+                })
+            } else if (!trusted) {
                 this.setState({
                     err: { ...this.state.err, emptyErr: "", imgErr: "Only jpeg, GIF, PNG, and TIFF iamge format is acceptable" }
                 })
