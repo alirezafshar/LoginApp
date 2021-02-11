@@ -13,7 +13,7 @@ module.exports = {
       host: HOST,
       database: DATABASE,
       user: USER,
-      password: PASSWORD,
+      password: PASS,
       charset: "utf8"
     }
   },
@@ -24,7 +24,7 @@ module.exports = {
       host: HOST,
       database: DATABASE,
       user: USER,
-      password: PASSWORD,
+      password: PASS,
       charset: "utf8"
     },
     pool: {
