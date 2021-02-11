@@ -10,8 +10,6 @@ router.post("/", (req, res) => {
     const imgprefix = Date.now() + "-";
     const form = new formidable.IncomingForm();
     form.parse(req, (err, fields, file) => {
-        console.log("fields: ", fields)
-        console.log("file: ", file)
         if (err) {
             return res.status(401).json({ err: err.message })
         }
