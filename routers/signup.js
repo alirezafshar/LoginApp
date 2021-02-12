@@ -10,6 +10,7 @@ const saltRound = 10;
 router.post("/", (req, res) => {
     const imgprefix = Date.now() + "-";
     const form = new formidable.IncomingForm();
+
     form.parse(req, (err, fields, file) => {
 
         if (err) {
@@ -17,7 +18,6 @@ router.post("/", (req, res) => {
         }
 
         userInfo.where({ email: fields.email }).fetch()
-
             .then(response => {
                 if (response) {
                     res.status(201).send("exist")
