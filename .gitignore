@@ -9,6 +9,10 @@
 # testing
 /coverage
 
+# libs
+**/lib
+/lib
+
 # production
 **/build
 /build
