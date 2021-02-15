@@ -4,10 +4,6 @@
   "homepage": "https://loginnerapp.herokuapp.com/",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "server.js",
-  "engines": {
-    "node": "14.15.5",
-    "npm": "7.5.3"
-  },
   "scripts": {
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build",
