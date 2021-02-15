@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 const userInfo = require("../models/userInfoModel");
 
 router.post("/", (req, res) => {
-
     userInfo.where({ email: req.body.email }).fetch()
         .then(response => {
             if (!response) {
